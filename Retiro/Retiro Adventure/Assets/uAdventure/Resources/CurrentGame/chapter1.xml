@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE eAdventure PUBLIC "SYSTEM" "eadventure.dtd">
+<eAdventure version="1">
+  <player>
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </player>
+  <character id="Gaviota1">
+    <resources name="Normal">
+      <asset type="standup" uri="assets/animation/GaviotaStandingUp.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <resources name="Aterrizando">
+      <asset type="standup" uri="assets/animation/GaviotaUp.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <character id="CarlosIII">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/animation/CarlosIIIStandingDown.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <inactive flag="ConocidoCarlosIII" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="CarlosIIIPresentacion" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <scene id="SceneFuenteAngelCaido" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/fuente_angelcaido.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="CarlosIII" x="509" y="317" scale="0.6101399" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
+  </scene>
+  <geoelement id="GeoPuertaAlcala">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40.4192956346237 -3.68860602378837 40.419414071642 -3.68820369243612 40.4196877011974 -3.68790328502647 40.4199817496283 -3.68782281875603 40.4203248045066 -3.68791937828056 40.4205085831861 -3.68811249732964 40.4206433538986 -3.68840754032128 40.42071278113 -3.68874549865713 40.4206392699416 -3.68909418582909 40.4204799954245 -3.68937313556662 40.4203778961767 -3.68951797485342 40.4202594608551 -3.68960380554191 40.4200511775425 -3.68964135646811 40.4196795331671 -3.68957161903371 40.4194508279157 -3.68934631347646 40.4192915505848 -3.68895471096029</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="GeoFuenteAngelCaido">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="25">
+        <Point>
+          <pos>40.4110496182229 -3.68253904578133</pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions>
+      <enter-action>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
+  </geoelement>
+  <geoelement id="GeoFuenteGalapagos">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="25">
+        <Point>
+          <pos>40.418624958376 -3.6854812026023</pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4108577611527, -3.68307917594916)" zoom="19" start="yes">
+    <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4142074584961, -3.6782968044281)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">50</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="CarlosIII" layer="0" scale="0.3893033" orientation="2">
+      <condition>
+        <active flag="ConocidoCarlosIII" />
+      </condition>
+      <ext-elem-ref transformManager="uAdventure.Geo.ScreenDescriptor">
+        <param name="Position">(56.4, 585.6)</param>
+        <param name="Rotation">0</param>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="GeoFuenteAngelCaido" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+  </map-scene>
+  <graph-conversation id="CarlosIIIPresentacion">
+    <dialogue-node nodeindex="0" editor-x="95" editor-y="89">
+      <speak-char idTarget="CarlosIII">¡Hola, soy Carlos III!</speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="373" editor-y="143">
+      <speak-char idTarget="CarlosIII">Tras una maldición, me han convertido en...</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">El Hada del Retiro</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Vivía aquí, en la fuente del ángel caído hasta que me has rescatado</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Tienes que ayudarme a llegar al portal</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¿Me ayudas?</speak-char>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <option-node nodeindex="2" preListening="yes" editor-x="608" editor-y="143" x="608" y="143">
+      <speak-player>¡Vale!</speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>No te he entendido</speak-player>
+      <condition />
+      <child nodeindex="4" />
+      <speak-player>Si hombre</speak-player>
+      <condition />
+      <child nodeindex="5" />
+    </option-node>
+    <dialogue-node nodeindex="3" editor-x="837" editor-y="103">
+      <speak-player>¡Gracias!</speak-player>
+      <condition />
+      <speak-player>No puedo atravesar el portal así</speak-player>
+      <condition />
+      <speak-player>Necesito una rosa para estar bien galán</speak-player>
+      <condition />
+      <speak-player>Además lo mismo encontramos algo en la Rosaleda</speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="ConocidoCarlosIII" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="432" editor-y="516">
+      <speak-player>Soy Carlos III</speak-player>
+      <condition />
+      <speak-player>Me llamaban el mejor alcalde de Madrid</speak-player>
+      <condition />
+      <speak-player>Y hace casi 300 años abrí el retiro al público</speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="861" editor-y="390">
+      <speak-player>¿Estás replicando a un rey?</speak-player>
+      <condition />
+      <speak-player>No se yo si es buena idea</speak-player>
+      <condition />
+      <speak-player>Además, necesito tu ayuda</speak-player>
+      <condition />
+      <speak-player>¿No podrías ayudarme un poco?</speak-player>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+  </graph-conversation>
+</eAdventure>

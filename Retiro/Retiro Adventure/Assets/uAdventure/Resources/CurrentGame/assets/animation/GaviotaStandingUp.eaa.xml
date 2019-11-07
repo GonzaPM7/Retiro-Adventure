@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE animation PUBLIC "SYSTEM" "animation.dtd">
+<animation id="GaviotaStandingUp.eaa.xml" usetransitions="no" slides="no">
+  <documentation />
+  <transition type="0" time="0" />
+  <frame uri="assets/animation/59beda847a216d0b052f1288.png" type="image" time="40" waitforclick="no" soundUri="" maxSoundTime="1000">
+    <documentation>
+    </documentation>
+  </frame>
+  <transition type="0" time="0" />
+</animation>

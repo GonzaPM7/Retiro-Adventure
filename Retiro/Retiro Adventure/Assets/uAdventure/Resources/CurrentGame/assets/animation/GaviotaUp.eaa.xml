@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE animation PUBLIC "SYSTEM" "animation.dtd">
+<animation id="GaviotaUp.eaa.xml" usetransitions="no" slides="no">
+  <documentation>Animation created by upgrader</documentation>
+  <transition type="0" time="0" />
+  <frame uri="assets/animation/59beda737a216d0b052f1286.png" type="image" time="40" waitforclick="no" soundUri="" maxSoundTime="1000">
+    <documentation>
+    </documentation>
+  </frame>
+  <transition type="0" time="0" />
+</animation>
