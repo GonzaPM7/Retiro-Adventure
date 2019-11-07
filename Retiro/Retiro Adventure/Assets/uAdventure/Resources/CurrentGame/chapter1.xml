@@ -514,7 +514,7 @@
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
-  <object id="play" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+  <object id="play" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/play-30619_960_720.png" />
       <asset type="icon" uri="assets/special/EmptyIcon.png" />
