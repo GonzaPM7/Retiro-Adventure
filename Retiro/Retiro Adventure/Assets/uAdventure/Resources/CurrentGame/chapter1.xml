@@ -125,14 +125,84 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/fuente_angelcaido.jpg" />
+      <asset type="background" uri="assets/background/fotos-fuentes-retiro-001.jpg" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="CarlosIII" x="509" y="317" scale="0.6101399" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="CarlosIII" x="779" y="651" scale="0.9241435" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
+  </scene>
+  <scene id="LaRosaleda" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/91371745-1024x516.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <scene id="Jardinesceciliorodríguez" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Jardines.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <scene id="PalaciodeCrista" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Palacio_de_Cristal.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <scene id="PalaciodeVelazquez" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Palacio_de_Velázquez_(Madrid)_04.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <scene id="MonumentoAlfonsoXII" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Monumento-Alfonso-XII.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <scene id="FuentedelosGalápagos" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/800px-Buen_Retiro_Fuente_de_los_Galapagos02.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <scene id="PuertadeAlcalá" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Puerta-de-Alcala.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
   </scene>
   <geoelement id="GeoPuertaAlcala">
     <description>
@@ -174,6 +244,12 @@
     </geometries>
     <actions>
       <enter-action>
+        <effect>
+          <trigger-scene idTarget="SceneFuenteAngelCaido" x="475" y="486" transitionTime="0" transitionType="0" />
+          <condition />
+          <trigger-conversation idTarget="CarlosIIIPresentacion" />
+          <condition />
+        </effect>
         <only-from-outside>True</only-from-outside>
       </enter-action>
     </actions>
@@ -196,7 +272,73 @@
     </geometries>
     <actions />
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4108577611527, -3.68307917594916)" zoom="19" start="yes">
+  <geoelement id="La Rosaleda ">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="45">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40.4106251349293 -3.6802435935476 40.4109764066033 -3.6803937972524</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
+      </geometry>
+    </geometries>
+    <actions>
+      <enter-action>
+        <effect>
+          <trigger-scene idTarget="LaRosaleda" x="512" y="387" transitionTime="0" transitionType="0" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
+  </geoelement>
+  <geoelement id="Jardines cecilio rodríguez">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="70">
+        <Point>
+          <pos>40.4127163997196 -3.67807636866306</pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="Palacio de Cristal">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="50">
+        <Point>
+          <pos>40.4135986325611 -3.68197093615289</pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4108312115667, -3.68318109989179)" zoom="19" start="yes">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
@@ -229,7 +371,7 @@
     <dialogue-node nodeindex="1" editor-x="373" editor-y="143">
       <speak-char idTarget="CarlosIII">Tras una maldición, me han convertido en...</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">El Hada del Retiro</speak-char>
+      <speak-char idTarget="CarlosIII">El Duende del Retiro</speak-char>
       <condition />
       <speak-char idTarget="CarlosIII">Vivía aquí, en la fuente del ángel caído hasta que me has rescatado</speak-char>
       <condition />
