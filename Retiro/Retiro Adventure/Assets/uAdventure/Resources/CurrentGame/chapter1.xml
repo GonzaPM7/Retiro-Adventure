@@ -111,6 +111,9 @@
     <voice name="" synthesizeAlways="no" />
     <actions>
       <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <inactive flag="ConocidoCarlosIII" />
+        </condition>
         <effect>
           <move-npc idTarget="CarlosIII" x="827" y="649" />
           <condition />
@@ -118,6 +121,15 @@
           <condition />
         </effect>
       </examine>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="ConocidoCarlosIII" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="RecordandoInicioCarlos" />
+          <condition />
+        </effect>
+      </talk-to>
     </actions>
   </character>
   <scene id="SceneFuenteAngelCaido" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -437,10 +449,18 @@
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
-    <dialogue-node nodeindex="1" editor-x="373" editor-y="143">
+    <dialogue-node nodeindex="1" editor-x="343" editor-y="136">
       <speak-char idTarget="CarlosIII">Tras una maldición, me han convertido en...</speak-char>
       <condition />
       <speak-char idTarget="CarlosIII">El Duende del Retiro, y estoy atrapado en el mundo de los vivos</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Llevo viviendo debajo de esta fuente desde que recibí esa maldición</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">El nombre de la fuente es Fuente del ángel caído, creada por Ricardo Bellver en 1877</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Sabes que mide 7 metros de largo, 10 metros de ancho y 2,65 metros de alto</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Bueno que me voy por las ramas...</speak-char>
       <condition />
       <speak-char idTarget="CarlosIII">Necesito que me lleves de nuevo a mi mundo a través de un portal situado en este parque.</speak-char>
       <condition />
@@ -455,7 +475,7 @@
       <speak-player>No te he entendido</speak-player>
       <condition />
       <child nodeindex="4" />
-      <speak-player>Si hombre</speak-player>
+      <speak-player>Quiero que me cuentes más sobre esta fuente</speak-player>
       <condition />
       <child nodeindex="5" />
     </option-node>
@@ -465,6 +485,8 @@
       <speak-char idTarget="CarlosIII">Para ello, tenemos que reunir las piezas de un puzle que nos permitirá abrirlo.</speak-char>
       <condition />
       <speak-char idTarget="CarlosIII"> Los antiguos viajeros del Retiro usaban una ruta especial que pasa por todas ellas y llega al portal. Yo te ayudaré a seguirla.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">He oído que en un lugar cercano los viajeros solían recoger flores para sus amadas, y tenían que tener cuidado de no pincharse con las espinas. Tal vez encontremos alguna pieza del puzle allí.</speak-char>
       <condition />
       <speak-char idTarget="CarlosIII">#! ¡Vamos!</speak-char>
       <condition />
@@ -484,14 +506,18 @@
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="861" editor-y="390">
-      <speak-char idTarget="CarlosIII">¿Estás replicando a un rey?</speak-char>
+    <dialogue-node nodeindex="5" editor-x="851" editor-y="422">
+      <speak-char idTarget="CarlosIII">Uii asi que eres curioso</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">No se yo si es buena idea</speak-char>
+      <speak-char idTarget="CarlosIII">Tengo una gran curiosidad sobre esta fuente</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">Además, necesito tu ayuda</speak-char>
+      <speak-char idTarget="CarlosIII">#! Sabes que la altitud topográfica oficial a la que está situada La Glorieta del Ángel Caído es de 666 metros sobre el nivel del mar en Alicante. 666 el número del diablo</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">¿No podrías ayudarme un poco?</speak-char>
+      <speak-char idTarget="CarlosIII">Lo más gracioso es que cuando la pusieron aquí no se sabia ese dato, casualidad ¿no?</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Despues de esta gran curiosidad...</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¿No podrías ayudarme en lo que te comente?</speak-char>
       <condition />
       <child nodeindex="2" />
     </dialogue-node>
@@ -512,6 +538,17 @@
           <condition />
         </effect>
       </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RecordandoInicioCarlos">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">Tenemos que reunir las piezas de un puzle que nos permitirá abrir el portal para regresar a mi mundo.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Los antiguos viajeros del Retiro usaban una ruta especial que pasa por todas ellas y llega al portal. Yo te ayudaré a seguirla.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">He oído que en un lugar cercano los viajeros solían recoger flores para sus amadas, y tenían que tener cuidado de no pincharse con las espinas. Tal vez encontremos alguna pieza del puzle allí.</speak-char>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="play" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
