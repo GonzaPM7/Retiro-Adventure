@@ -110,15 +110,14 @@
     </description>
     <voice name="" synthesizeAlways="no" />
     <actions>
-      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
-        <condition>
-          <inactive flag="ConocidoCarlosIII" />
-        </condition>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
         <effect>
+          <move-npc idTarget="CarlosIII" x="827" y="649" />
+          <condition />
           <trigger-conversation idTarget="CarlosIIIPresentacion" />
           <condition />
         </effect>
-      </talk-to>
+      </examine>
     </actions>
   </character>
   <scene id="SceneFuenteAngelCaido" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -131,7 +130,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="CarlosIII" x="779" y="651" scale="0.9241435" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="CarlosIII" x="823" y="939" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="LaRosaleda" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -204,6 +203,19 @@
     </name>
     <default-initial-position x="400" y="450" />
   </scene>
+  <scene id="Inicio" hideInventory="no" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Retiro vista aérea.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="play" x="502" y="508" scale="0.4383554" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
   <geoelement id="GeoPuertaAlcala">
     <description>
       <name>
@@ -245,9 +257,7 @@
     <actions>
       <enter-action>
         <effect>
-          <trigger-scene idTarget="SceneFuenteAngelCaido" x="475" y="486" transitionTime="0" transitionType="0" />
-          <condition />
-          <trigger-conversation idTarget="CarlosIIIPresentacion" />
+          <trigger-zoned-scene idTarget="SceneFuenteAngelCaido" x="475" y="486" zoneId="GeoFuenteAngelCaido" transitionTime="0" transitionType="0" />
           <condition />
         </effect>
         <only-from-outside>True</only-from-outside>
@@ -338,7 +348,43 @@
     </geometries>
     <actions />
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4108312115667, -3.68318109989179)" zoom="19" start="yes">
+  <geoelement id="PalacioDeVelazquez">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="50">
+        <Point>
+          <pos>40.4151547650722 -3.68198702940703</pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="Monumento Alfonso XII">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="40">
+        <Point>
+          <pos>40.4173153198322 -3.68306259522184</pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4110517770391, -3.68359147787121)" zoom="18" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
@@ -361,21 +407,42 @@
     <map-element targetId="GeoFuenteAngelCaido" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
+    <map-element targetId="La Rosaleda " layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="Jardines cecilio rodríguez" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="Palacio de Cristal" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="PalacioDeVelazquez" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="Monumento Alfonso XII" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="GeoFuenteGalapagos" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="GeoPuertaAlcala" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
   </map-scene>
   <graph-conversation id="CarlosIIIPresentacion">
     <dialogue-node nodeindex="0" editor-x="95" editor-y="89">
-      <speak-char idTarget="CarlosIII">¡Hola, soy Carlos III!</speak-char>
+      <speak-char idTarget="CarlosIII">......</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡Espera, no soy una basura, soy Carlos III!</speak-char>
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
     <dialogue-node nodeindex="1" editor-x="373" editor-y="143">
       <speak-char idTarget="CarlosIII">Tras una maldición, me han convertido en...</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">El Duende del Retiro</speak-char>
+      <speak-char idTarget="CarlosIII">El Duende del Retiro, y estoy atrapado en el mundo de los vivos</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">Vivía aquí, en la fuente del ángel caído hasta que me has rescatado</speak-char>
-      <condition />
-      <speak-char idTarget="CarlosIII">Tienes que ayudarme a llegar al portal</speak-char>
+      <speak-char idTarget="CarlosIII">Necesito que me lleves de nuevo a mi mundo a través de un portal situado en este parque.</speak-char>
       <condition />
       <speak-char idTarget="CarlosIII">¿Me ayudas?</speak-char>
       <condition />
@@ -393,13 +460,13 @@
       <child nodeindex="5" />
     </option-node>
     <dialogue-node nodeindex="3" editor-x="837" editor-y="103">
-      <speak-player>¡Gracias!</speak-player>
+      <speak-char idTarget="CarlosIII">¡Gracias!</speak-char>
       <condition />
-      <speak-player>No puedo atravesar el portal así</speak-player>
+      <speak-char idTarget="CarlosIII">Para ello, tenemos que reunir las piezas de un puzle que nos permitirá abrirlo.</speak-char>
       <condition />
-      <speak-player>Necesito una rosa para estar bien galán</speak-player>
+      <speak-char idTarget="CarlosIII"> Los antiguos viajeros del Retiro usaban una ruta especial que pasa por todas ellas y llega al portal. Yo te ayudaré a seguirla.</speak-char>
       <condition />
-      <speak-player>Además lo mismo encontramos algo en la Rosaleda</speak-player>
+      <speak-char idTarget="CarlosIII">#! ¡Vamos!</speak-char>
       <condition />
       <end-conversation>
         <effect>
@@ -409,24 +476,66 @@
       </end-conversation>
     </dialogue-node>
     <dialogue-node nodeindex="4" editor-x="432" editor-y="516">
-      <speak-player>Soy Carlos III</speak-player>
+      <speak-char idTarget="CarlosIII">Soy Carlos III</speak-char>
       <condition />
-      <speak-player>Me llamaban el mejor alcalde de Madrid</speak-player>
+      <speak-char idTarget="CarlosIII">Me llamaban el mejor alcalde de Madrid</speak-char>
       <condition />
-      <speak-player>Y hace casi 300 años abrí el retiro al público</speak-player>
+      <speak-char idTarget="CarlosIII">Y hace casi 300 años abrí el retiro al público</speak-char>
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
     <dialogue-node nodeindex="5" editor-x="861" editor-y="390">
-      <speak-player>¿Estás replicando a un rey?</speak-player>
+      <speak-char idTarget="CarlosIII">¿Estás replicando a un rey?</speak-char>
       <condition />
-      <speak-player>No se yo si es buena idea</speak-player>
+      <speak-char idTarget="CarlosIII">No se yo si es buena idea</speak-char>
       <condition />
-      <speak-player>Además, necesito tu ayuda</speak-player>
+      <speak-char idTarget="CarlosIII">Además, necesito tu ayuda</speak-char>
       <condition />
-      <speak-player>¿No podrías ayudarme un poco?</speak-player>
+      <speak-char idTarget="CarlosIII">¿No podrías ayudarme un poco?</speak-char>
       <condition />
       <child nodeindex="2" />
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="ConversaciónInicial">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>Bueno, un día más en el Parque del Retiro. Hora de mi paseo matutino diario.</speak-player>
+      <condition />
+      <speak-player>Por algo es mi parque favorito. Puedo ver arquitectura y escultura de los siglos XVII al XXI. Y todo gracias al conde-duque de Olivares, y bueno, también a Carlos III, por permitir, a nosotros, el público, visitarlo.</speak-player>
+      <condition />
+      <speak-player>...</speak-player>
+      <condition />
+      <speak-player>Espera. ¿Qué es eso que veo delante? ¡Ya han vuelto a tirar basura en la fuente de mi ángel favorito! ¿Qué opinaría su arquitecto, Ricardo Bellver, de esto, al ver su fuente manchada de esta manera?</speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Retiro" x="475" y="486" transitionTime="0" transitionType="0" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <object id="play" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/play-30619_960_720.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <remove-element idTarget="play" />
+          <condition />
+          <trigger-conversation idTarget="ConversaciónInicial" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
 </eAdventure>

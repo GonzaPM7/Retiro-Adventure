@@ -46,7 +46,7 @@ namespace uAdventure.Runner
         private float progress = 0.0f;
         private Queue<MovementPoint> moves = new Queue<MovementPoint>();
         // Movement parameters
-        private float player_speed = 300f;
+        private float player_speed = 2400f;
         private MovementPoint point;
         private Vector2 origin;
         private Rectangle toArea;
