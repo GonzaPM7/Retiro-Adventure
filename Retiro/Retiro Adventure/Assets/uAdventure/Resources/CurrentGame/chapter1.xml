@@ -132,6 +132,68 @@
       </talk-to>
     </actions>
   </character>
+  <character id="AlfonsoXIII">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/animation/alfonsoxiii.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <character id="GuardiaSeguridad">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/animation/guardiaseguridad.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
   <scene id="SceneFuenteAngelCaido" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
@@ -551,6 +613,189 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="Rosaleda1">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">Ahhh, la Rosaleda. Que recuerdos. Hicimos bien en inspirarnos en el Bois de Boulogne de París. Y qué pena que el invernadero que nos cedió el Marqués de Salamanca ya no esté por aquí. </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Rosaleda2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>¿Qué es ese papel que veo entre los rosales? Oh, es una pieza del puzle.</speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
+      <speak-char idTarget="CarlosIII">Según lo que sé, las siguientes 2 piezas se encontraban en unos jardines cercanos, conocidos por ser rebosantes de tranquilidad, en los que se pueden encontrar pavos reales y esculturas de todo tipo.</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="JardinesCecilio1">
+    <dialogue-node nodeindex="0" editor-x="48" editor-y="50">
+      <speak-char idTarget="CarlosIII">Los Jardines de Cecilio Rodríguez. Fue buena idea ampliar los exteriores de la Casa de Fieras. Desde entonces tenemos en el parque un gran lugar para venir a relajarse. </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="JardinesCecilio2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>Mira, ese pavo real tiene algo en la boca. Probablemente sean las piezas del puzzle. ¿Ahora cómo se las quitamos? </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
+      <speak-char idTarget="CarlosIII">Toma esta semilla. Dásela. Tendrá que soltarlas sí o sí para comérselas.</speak-char>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <dialogue-node nodeindex="2" editor-x="520" editor-y="50">
+      <speak-player>Gracias por la idea. Parece que funcionó. Tenemos 2 piezas más del puzle. Espera, ¿qué es eso?</speak-player>
+      <condition />
+      <speak-player>(Llega una gaviota y te arranca una de las piezas de la mano. Sale volando)</speak-player>
+      <condition />
+      <speak-player>¡Oh no, maldito pajarraco! ¿Qué haremos ahora?</speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="755" editor-y="50">
+      <speak-char idTarget="CarlosIII"> No te preocupes. Creo que sé dónde está su nido. Hay una fuente cercana conocida precisamente por esos animales. Piensa. ¿Dónde crees que puede ser?</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="FuenteGaviotas1">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">La Fuente de las Gaviotas. Manuel Herrero Palacios creó un impresionante mecanismo. Cuando el agua fluye por la fuente, las gaviotas de bronce mueven sus alas.</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="FuenteGaviotas2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">Ahí está el nido. Veo la pieza. ¡Cojamosla antes de que llegue su inquilina!</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Menos mal que la recuperamos a tiempo. Según mis notas, la siguiente pieza está en un palacio cercano pegado a un gran lago. La pieza está en el interior, pero se puede ver perfectamente desde el exterior.</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="PalacioCristal1">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">El Palacio de Cristal. ¿Sabías que fue el lugar elegido para elegir Presidente del Gobierno a Manuel Azaña en 1936?</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="PalacioCristal2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>Ya veo la pieza. Pero ese guardia de seguridad no nos deja pasar. Parece que el palacio se encuentra en reparaciones.</speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
+      <speak-char idTarget="CarlosIII">Yo me encargo.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Hola, soy Carlos III. La última vez que vine aquí me dejé el sombrero. ¿Me dejarías entrar a recuperarlo?</speak-char>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <dialogue-node nodeindex="2" editor-x="520" editor-y="50">
+      <speak-char idTarget="GuardiaSeguridad">¡Qué vas a ser tú Carlos III, pequeñajo! Carlos III murió en 1788. No me vas a engañar tan fácilmente.</speak-char>
+      <condition />
+      <child nodeindex="3" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="754" editor-y="50">
+      <speak-char idTarget="CarlosIII">Bueno, lo intenté de la manera amable.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡POW!</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡PLOF!</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡KA-POW!</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡OUCH!</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡OOF!</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Asunto solucionado. No se volverá a despertar hasta dentro de unas horas.</speak-char>
+      <condition />
+      <child nodeindex="4" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="989" editor-y="50">
+      <speak-player>Bueno, vía libre. La pieza es nuestra. ¿Siguiente parada?</speak-player>
+      <condition />
+      <child nodeindex="5" />
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="1224" editor-y="50">
+      <speak-char idTarget="CarlosIII">He de decir que no sé dónde está la siguiente. Pero en un palacio cercano con bóvedas de hierro podremos buscar más información.</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="PalacioVelazquez1">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">El Palacio de Velázquez. Fue usado para la Exposición Nacional de Minería. Qué tiempos aquellos.</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="PalacioVelazquez2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">¿Qué es eso que veo tirado por el suelo? Creo que reconozco ese broche. Vamos a acercarnos</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Efectivamente. Este broche pertenece a uno de mis muchos descendientes. He oído que también le gusta visitar el Parque del Retiro. Debe de estar por aquí cerca. Por lo que sé, le gusta contemplar las vistas desde un lugar elevado. ¡Busquemosle!</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="MonumentoAlfonso1">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">El Monumento a Alfonso XII. Construido por José Grases Riera, al ganar el concurso de la reina regente María Cristina. Su estatua fue la mejor.</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="MonumentoAlfonso2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">¿Espera, qué? Veo al fantasma de Alfonso XII sentado junto a su monumento.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¿Cuánto tiempo, Alfonso? Hace tiempo que no te veo. Venías cada día al Retiro de visita hasta que un día simplemente dejaste de venir. Me dijeron que te pusiste enfermo.</speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
+      <speak-char idTarget="AlfonsoXIII">¡Carlos! ¿Qué te cuentas? Veo que aún no te curaste de tu maldición. Y veo que ya encontraste a alguien para seguir ayudándote. Yo, como puedes ver, no estoy disponible.</speak-char>
+      <condition />
+      <speak-char idTarget="AlfonsoXIII">Hablando de eso, ayer, leyendo la Constitución de 1876 encontré esto entre sus hojas. Esto era lo que necesitabas para curarte, ¿no?</speak-char>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <dialogue-node nodeindex="2" editor-x="520" editor-y="50">
+      <speak-char idTarget="CarlosIII"> ¡Ah, sí! ¡Gracias! Pues con esta, ya tenemos todas las piezas del puzzle. Juntemoslas y veamos donde está situado el portal.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡La Puerta de Alcalá! ¡Una de mis mayores creaciones! ¡Corramos a ella!</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="PuertaAlcala1">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">La Puerta de Alcalá. Una de mis mayores obras. Una de las 5 puertas reales que daban acceso a la ciudad de Madrid, al menos en mis tiempos.</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Ya estamos aquí. Coloquemos el puzle completo en ese pedestal de ahí. El portal debería abrirse.</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="PuertaAlcala2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="CarlosIII">Mi tiempo aquí ha terminado. Nunca podré agradecerte suficiente lo mucho que has hecho por mí. Recordar este parque me ha traído lágrimas a los ojos. ¡Hasta siempre, viajero!</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
   <object id="play" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/play-30619_960_720.png" />
@@ -574,5 +819,61 @@
         </effect>
       </examine>
     </actions>
+  </object>
+  <object id="pedestal" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pedestal.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="broche" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/broche.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="pavoReal" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pavoreal.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="nido" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/nido.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
   </object>
 </eAdventure>
