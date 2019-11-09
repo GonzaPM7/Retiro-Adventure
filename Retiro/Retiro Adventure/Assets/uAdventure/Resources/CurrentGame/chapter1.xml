@@ -119,14 +119,40 @@
           <condition />
           <trigger-conversation idTarget="CarlosIIIPresentacion" />
           <condition />
+          <cancel-action />
+          <condition />
         </effect>
       </examine>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
           <active flag="ConocidoCarlosIII" />
+          <inactive flag="EntrarRosaleda" />
         </condition>
         <effect>
           <trigger-conversation idTarget="RecordandoInicioCarlos" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarRosaleda" />
+          <inactive flag="EntrarJardines" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Rosaleda1" />
+          <condition />
+          <trigger-conversation idTarget="Rosaleda2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarJardines" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="JardinesCecilio1" />
+          <condition />
+          <trigger-conversation idTarget="JardinesCecilio2" />
           <condition />
         </effect>
       </talk-to>
@@ -206,16 +232,44 @@
     <characters>
       <character-ref idTarget="CarlosIII" x="823" y="939" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
+    <active-areas>
+      <active-area id="Info" rectangular="yes" x="336" y="9" width="277" height="497" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <speak-player>Anteriormente en esta ubicación se encontraba la ermita de San Antonio Abad o San Antón, en tiempos de los Austrias.</speak-player>
+              <condition />
+              <speak-player>Tras su derribo, Carlos III mandó edificar en este lugar la Fábrica de Porcelanas, que fue destruida durante la Guerra de Independencia, y posteriormente se construyó la Fuente.</speak-player>
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+    </active-areas>
   </scene>
   <scene id="LaRosaleda" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/91371745-1024x516.jpg" />
+      <asset type="background" uri="assets/background/rosal.jpg" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="pieza1" x="992" y="544" scale="0.141357" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <characters>
+      <character-ref idTarget="CarlosIII" x="219" y="711" scale="1.151744" orientation="2" layer="1" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="Jardinesceciliorodríguez" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -226,6 +280,10 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="CarlosIII" x="789" y="927" scale="1" orientation="2" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Gaviota1" x="853" y="709" scale="3.224357" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="PalaciodeCrista" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -379,7 +437,9 @@
     <actions>
       <enter-action>
         <effect>
-          <trigger-scene idTarget="LaRosaleda" x="512" y="387" transitionTime="0" transitionType="0" />
+          <trigger-zoned-scene idTarget="LaRosaleda" x="640" y="540" zoneId="La Rosaleda " transitionTime="0" transitionType="0" />
+          <condition />
+          <activate flag="EntrarRosaleda" />
           <condition />
         </effect>
         <only-from-outside>True</only-from-outside>
@@ -402,7 +462,17 @@
         </Point>
       </geometry>
     </geometries>
-    <actions />
+    <actions>
+      <enter-action>
+        <effect>
+          <trigger-zoned-scene idTarget="Jardinesceciliorodríguez" x="800" y="692" zoneId="Jardines cecilio rodríguez" transitionTime="0" transitionType="0" />
+          <condition />
+          <activate flag="EntrarJardines" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
   </geoelement>
   <geoelement id="Palacio de Cristal">
     <description>
@@ -458,7 +528,7 @@
     </geometries>
     <actions />
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4110517770391, -3.68359147787121)" zoom="18" start="no">
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4110762842697, -3.68112384557742)" zoom="17" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
@@ -556,6 +626,10 @@
         <effect>
           <activate flag="ConocidoCarlosIII" />
           <condition />
+          <navigate navigation-type="Ordered">
+            <step locks="False">La Rosaleda </step>
+          </navigate>
+          <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
@@ -598,6 +672,10 @@
         <effect>
           <trigger-scene idTarget="Retiro" x="475" y="486" transitionTime="0" transitionType="0" />
           <condition />
+          <navigate navigation-type="Ordered">
+            <step locks="True">GeoFuenteAngelCaido</step>
+          </navigate>
+          <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
@@ -629,7 +707,12 @@
     <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
       <speak-char idTarget="CarlosIII">Según lo que sé, las siguientes 2 piezas se encontraban en unos jardines cercanos, conocidos por ser rebosantes de tranquilidad, en los que se pueden encontrar pavos reales y esculturas de todo tipo.</speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <activate flag="Saber1pieza" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="JardinesCecilio1">
@@ -865,6 +948,111 @@
   <object id="nido" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/nido.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="pieza1" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pieza1.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <grab needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Saber1pieza" />
+        </condition>
+        <effect>
+          <remove-element idTarget="pieza1" />
+          <condition />
+          <generate-object idTarget="pieza1" />
+          <condition />
+          <speak-player>Voy a guardar la pieza en la mochila, iré al jardin que hay dicho Carlos II a por otras dos</speak-player>
+          <condition />
+          <activate flag="Pieza1" />
+          <condition />
+          <navigate navigation-type="Ordered">
+            <step locks="False">Jardines cecilio rodríguez</step>
+          </navigate>
+          <condition />
+        </effect>
+      </grab>
+    </actions>
+  </object>
+  <object id="pieza2" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pieza2.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="pieza3" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pieza3.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="pieza4" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pieza 4.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="pieza5" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pieza 5.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="pieza6" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pieza 6.png" />
       <asset type="icon" uri="assets/special/EmptyIcon.png" />
     </resources>
     <description>
