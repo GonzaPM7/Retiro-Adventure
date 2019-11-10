@@ -34,6 +34,9 @@
   </player>
   <character id="Gaviota1">
     <resources name="Normal">
+      <condition>
+        <active flag="Saber2pieza" />
+      </condition>
       <asset type="standup" uri="assets/animation/GaviotaStandingUp.eaa.xml" />
       <asset type="standdown" uri="assets/special/EmptyAnimation" />
       <asset type="standright" uri="assets/special/EmptyAnimation" />
@@ -50,6 +53,9 @@
       <asset type="walkleft" uri="assets/special/EmptyAnimation" />
     </resources>
     <resources name="Aterrizando">
+      <condition>
+        <inactive flag="Saber2pieza" />
+      </condition>
       <asset type="standup" uri="assets/animation/GaviotaUp.eaa.xml" />
       <asset type="standdown" uri="assets/special/EmptyAnimation" />
       <asset type="standright" uri="assets/special/EmptyAnimation" />
@@ -140,25 +146,6 @@
       </examine>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <inactive flag="IntroPalacioCristal" />
-          <active flag="Pieza2" />
-        </condition>
-        <effect>
-          <trigger-conversation idTarget="PalacioCristal1" />
-          <condition />
-        </effect>
-      </talk-to>
-      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
-        <condition>
-          <active flag="Pieza2" />
-        </condition>
-        <effect>
-          <trigger-conversation idTarget="RecordandoPalacioCristal" />
-          <condition />
-        </effect>
-      </talk-to>
-      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
-        <condition>
           <active flag="ConocidoCarlosIII" />
           <inactive flag="EntrarRosaleda" />
         </condition>
@@ -182,11 +169,69 @@
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
           <active flag="EntrarJardines" />
+          <inactive flag="EntrarPalacioVelazquez" />
+          <inactive flag="Pieza2" />
         </condition>
         <effect>
           <trigger-conversation idTarget="JardinesCecilio1" />
           <condition />
           <trigger-conversation idTarget="JardinesCecilio2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Pieza2" />
+          <inactive flag="EntrarPalacioCristal" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="RecordandoPalacioCristal" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarPalacioCristal" />
+          <inactive flag="EntrarPalacioVelazquez" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="PalacioCristal1" />
+          <condition />
+          <trigger-conversation idTarget="PalacioCristal2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarPalacioVelazquez" />
+          <inactive flag="EntrarMonumento" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="PalacioVelazquez1" />
+          <condition />
+          <trigger-conversation idTarget="PalacioVelazquez2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarMonumento" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="MonumentoAlfonso1" />
+          <condition />
+          <trigger-conversation idTarget="MonumentoAlfonso2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarPuertaAlcala" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="PuertaAlcala1" />
+          <condition />
+          <trigger-conversation idTarget="PuertaAlcala2" />
           <condition />
         </effect>
       </talk-to>
@@ -342,7 +387,8 @@
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="CarlosIII" x="789" y="927" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="CarlosIII" x="789" y="927" scale="1" orientation="2" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Gaviota1" x="1706" y="835" scale="0.8606282" orientation="0" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="PalaciodeCrista" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -355,9 +401,9 @@
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="GuardiaSeguridad" x="231" y="1172" scale="2.446382" orientation="2" layer="1" hasInfluenceArea="no">
+      <character-ref idTarget="GuardiaSeguridad" x="234" y="1193" scale="2.446382" orientation="2" layer="1" hasInfluenceArea="no">
         <condition>
-          <active flag="IntroPalacioCristal" />
+          <active flag="ConocidoCarlosIII" />
         </condition>
       </character-ref>
       <character-ref idTarget="CarlosIII" x="1085" y="852" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
@@ -372,6 +418,12 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="broche" x="32" y="1033" scale="0.2823207" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <characters>
+      <character-ref idTarget="CarlosIII" x="1192" y="1092" scale="1" orientation="2" layer="1" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="MonumentoAlfonsoXII" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -382,6 +434,9 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="CarlosIII" x="912" y="601" scale="0.6327335" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="FuentedelosGalápagos" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -392,6 +447,9 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="CarlosIII" x="638" y="1069" scale="0.8502862" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="PuertadeAlcalá" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -402,6 +460,9 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="CarlosIII" x="621" y="449" scale="0.525088" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="Inicio" hideInventory="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -436,7 +497,17 @@
         </Polygon>
       </geometry>
     </geometries>
-    <actions />
+    <actions>
+      <enter-action>
+        <effect>
+          <trigger-zoned-scene idTarget="PuertadeAlcalá" x="360" y="338" zoneId="GeoPuertaAlcala" transitionTime="0" transitionType="0" />
+          <condition />
+          <activate flag="EntrarPuertaAlcala" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
   </geoelement>
   <geoelement id="GeoFuenteAngelCaido">
     <description>
@@ -579,8 +650,6 @@
         <effect>
           <trigger-zoned-scene idTarget="PalaciodeCrista" x="640" y="639" zoneId="Palacio de Cristal" transitionTime="0" transitionType="0" />
           <condition />
-          <trigger-conversation idTarget="PalacioCristal1" />
-          <condition />
           <activate flag="EntrarPalacioCristal" />
           <condition />
         </effect>
@@ -604,7 +673,17 @@
         </Point>
       </geometry>
     </geometries>
-    <actions />
+    <actions>
+      <enter-action>
+        <effect>
+          <trigger-zoned-scene idTarget="PalaciodeVelazquez" x="1024" y="816" zoneId="PalacioDeVelazquez" transitionTime="0" transitionType="0" />
+          <condition />
+          <activate flag="EntrarPalacioVelazquez" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
   </geoelement>
   <geoelement id="Monumento Alfonso XII">
     <description>
@@ -622,9 +701,19 @@
         </Point>
       </geometry>
     </geometries>
-    <actions />
+    <actions>
+      <enter-action>
+        <effect>
+          <trigger-zoned-scene idTarget="MonumentoAlfonsoXII" x="515" y="450" zoneId="Monumento Alfonso XII" transitionTime="0" transitionType="0" />
+          <condition />
+          <activate flag="EntrarMonumento" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4143501860228, -3.67994099860518)" zoom="19" start="no">
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4108191823922, -3.68321329360356)" zoom="19" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition>
         <active flag="Saber2pieza" />
@@ -665,7 +754,9 @@
       </condition>
     </map-element>
     <map-element targetId="PalacioDeVelazquez" layer="0" scale="1" orientation="2">
-      <condition />
+      <condition>
+        <inactive flag="SaberPieza5" />
+      </condition>
     </map-element>
     <map-element targetId="Monumento Alfonso XII" layer="0" scale="1" orientation="2">
       <condition />
@@ -675,6 +766,18 @@
     </map-element>
     <map-element targetId="GeoPuertaAlcala" layer="0" scale="1" orientation="2">
       <condition />
+    </map-element>
+    <map-element targetId="pieza5" layer="0" scale="0.1155076" orientation="2">
+      <condition>
+        <active flag="SaberPieza5" />
+      </condition>
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4154014587402, -3.68160271644592)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+      </ext-elem-ref>
     </map-element>
   </map-scene>
   <graph-conversation id="CarlosIIIPresentacion">
@@ -840,13 +943,22 @@
     <dialogue-node nodeindex="2" editor-x="520" editor-y="50">
       <speak-player>Gracias por la idea. Parece que funcionó. Tenemos 2 piezas más del puzle. Espera, ¿qué es eso?</speak-player>
       <condition />
-      <speak-player>(Llega una gaviota y te arranca una de las piezas de la mano. Sale volando)</speak-player>
-      <condition />
-      <speak-player>¡Oh no, maldito pajarraco! ¿Qué haremos ahora?</speak-player>
-      <condition />
       <child nodeindex="3" />
+      <effect>
+        <generate-object idTarget="pieza2" />
+        <condition />
+        <move-npc idTarget="Gaviota1" x="-300" y="835" />
+        <condition />
+      </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="755" editor-y="50">
+    <dialogue-node nodeindex="3" editor-x="782" editor-y="306">
+      <speak-player>#! ¡¡Cuidado!!</speak-player>
+      <condition />
+      <speak-player>¡Oh no, maldito pajarraco! Nos ha quitado una pieza ¿Qué haremos ahora?</speak-player>
+      <condition />
+      <child nodeindex="4" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="821" editor-y="42">
       <speak-char idTarget="CarlosIII"> No te preocupes. Creo que sé dónde está su nido. Hay una fuente cercana conocida precisamente por esos animales. Piensa. ¿Dónde crees que puede ser?</speak-char>
       <condition />
       <end-conversation>
@@ -868,11 +980,17 @@
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-char idTarget="CarlosIII">Ahí está el nido. Veo la pieza. ¡Cojamosla antes de que llegue su inquilina!</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">Menos mal que la recuperamos a tiempo. Según mis notas, la siguiente pieza está en un palacio cercano pegado a un gran lago. La pieza está en el interior, pero se puede ver perfectamente desde el exterior.</speak-char>
+      <speak-char idTarget="CarlosIII">Menos mal que la recuperamos a tiempo. Según mis notas, la siguiente pieza está en un palacio con paredes de cristal cercano pegado a un gran lago. La pieza está en el interior, pero se puede ver perfectamente desde el exterior.</speak-char>
       <condition />
       <end-conversation>
         <effect>
           <activate flag="Pieza2" />
+          <condition />
+          <generate-object idTarget="pieza3" />
+          <condition />
+          <navigate navigation-type="Ordered">
+            <step locks="False">Palacio de Cristal</step>
+          </navigate>
           <condition />
         </effect>
       </end-conversation>
@@ -916,21 +1034,36 @@
       <condition />
       <speak-char idTarget="CarlosIII">¡OOF!</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">Asunto solucionado. No se volverá a despertar hasta dentro de unas horas.</speak-char>
-      <condition />
       <child nodeindex="4" />
+      <effect>
+        <move-npc idTarget="GuardiaSeguridad" x="234" y="2000" />
+        <condition />
+      </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="989" editor-y="50">
-      <speak-player>Bueno, vía libre. La pieza es nuestra. ¿Siguiente parada?</speak-player>
+    <dialogue-node nodeindex="4" editor-x="982" editor-y="61">
+      <speak-char idTarget="CarlosIII">.....</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">Asunto solucionado. No se volverá a despertar hasta dentro de unas horas.</speak-char>
       <condition />
       <child nodeindex="5" />
     </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="1224" editor-y="50">
+    <dialogue-node nodeindex="5" editor-x="1198" editor-y="17">
+      <speak-player>Bueno, vía libre. La pieza es nuestra. ¿Siguiente parada?</speak-player>
+      <condition />
+      <child nodeindex="6" />
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="1253" editor-y="242">
       <speak-char idTarget="CarlosIII">He de decir que no sé dónde está la siguiente. Pero en un palacio cercano con bóvedas de hierro podremos buscar más información.</speak-char>
       <condition />
       <end-conversation>
         <effect>
           <activate flag="Pieza3" />
+          <condition />
+          <generate-object idTarget="pieza4" />
+          <condition />
+          <navigate navigation-type="Ordered">
+            <step locks="False">PalacioDeVelazquez</step>
+          </navigate>
           <condition />
         </effect>
       </end-conversation>
@@ -949,7 +1082,14 @@
       <condition />
       <speak-char idTarget="CarlosIII">Efectivamente. Este broche pertenece a uno de mis muchos descendientes. He oído que también le gusta visitar el Parque del Retiro. Debe de estar por aquí cerca. Por lo que sé, le gusta contemplar las vistas desde un lugar elevado. ¡Busquemosle!</speak-char>
       <condition />
-      <end-conversation />
+      <speak-char idTarget="CarlosIII">Pero antes debemos buscar una pieza del puzle que se encuentra en los alrededores del palacio</speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="SaberPieza5" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="MonumentoAlfonso1">
@@ -1177,6 +1317,24 @@
       <detailed>
       </detailed>
     </description>
+    <actions>
+      <grab needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <remove-element idTarget="pieza5" />
+          <condition />
+          <generate-object idTarget="pieza5" />
+          <condition />
+          <speak-player>Ahora tenemos que ir al monumento de un conocido de Carlos III</speak-player>
+          <condition />
+          <speak-player>Me ha dicho que tiene un lago donde puedo ir en barca</speak-player>
+          <condition />
+          <navigate navigation-type="Ordered">
+            <step locks="False">Monumento Alfonso XII</step>
+          </navigate>
+          <condition />
+        </effect>
+      </grab>
+    </actions>
   </object>
   <object id="pieza6" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
