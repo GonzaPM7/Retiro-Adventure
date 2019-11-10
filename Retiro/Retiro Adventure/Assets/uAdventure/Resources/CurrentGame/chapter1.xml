@@ -267,6 +267,14 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="MonumentoAlfonso2" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
   <character id="GuardiaSeguridad">
     <resources name="No name">
@@ -435,7 +443,8 @@
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="CarlosIII" x="912" y="601" scale="0.6327335" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="CarlosIII" x="919" y="601" scale="0.6327335" orientation="2" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="AlfonsoXIII" x="269" y="615" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="FuentedelosGalápagos" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -460,8 +469,11 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="pedestal" x="402" y="456" scale="0.4010191" layer="0" hasInfluenceArea="no" />
+    </objects>
     <characters>
-      <character-ref idTarget="CarlosIII" x="621" y="449" scale="0.525088" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="CarlosIII" x="621" y="449" scale="0.525088" orientation="2" layer="1" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="Inicio" hideInventory="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -475,6 +487,19 @@
     <default-initial-position x="400" y="450" />
     <objects>
       <object-ref idTarget="play" x="502" y="508" scale="0.4383554" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="Final" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Retiro vista aérea.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="theend" x="503" y="661" scale="1.677344" layer="0" hasInfluenceArea="no" />
     </objects>
   </scene>
   <geoelement id="GeoPuertaAlcala">
@@ -551,7 +576,15 @@
         </Point>
       </geometry>
     </geometries>
-    <actions />
+    <actions>
+      <enter-action>
+        <effect>
+          <trigger-zoned-scene idTarget="FuentedelosGalápagos" x="400" y="800" zoneId="GeoPuertaAlcala" transitionTime="0" transitionType="0" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
   </geoelement>
   <geoelement id="La Rosaleda ">
     <description>
@@ -713,7 +746,7 @@
       </enter-action>
     </actions>
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4108191823922, -3.68321329360356)" zoom="19" start="no">
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4105353053417, -3.68353784089437)" zoom="18" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition>
         <active flag="Saber2pieza" />
@@ -1113,13 +1146,24 @@
       <speak-char idTarget="AlfonsoXIII">Hablando de eso, ayer, leyendo la Constitución de 1876 encontré esto entre sus hojas. Esto era lo que necesitabas para curarte, ¿no?</speak-char>
       <condition />
       <child nodeindex="2" />
+      <effect>
+        <generate-object idTarget="pieza6" />
+        <condition />
+      </effect>
     </dialogue-node>
     <dialogue-node nodeindex="2" editor-x="520" editor-y="50">
       <speak-char idTarget="CarlosIII"> ¡Ah, sí! ¡Gracias! Pues con esta, ya tenemos todas las piezas del puzzle. Juntemoslas y veamos donde está situado el portal.</speak-char>
       <condition />
       <speak-char idTarget="CarlosIII">¡La Puerta de Alcalá! ¡Una de mis mayores creaciones! ¡Corramos a ella!</speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <navigate navigation-type="Ordered">
+            <step locks="False">GeoPuertaAlcala</step>
+          </navigate>
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="PuertaAlcala1">
@@ -1135,7 +1179,12 @@
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-char idTarget="CarlosIII">Mi tiempo aquí ha terminado. Nunca podré agradecerte suficiente lo mucho que has hecho por mí. Recordar este parque me ha traído lágrimas a los ojos. ¡Hasta siempre, viajero!</speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <trigger-zoned-scene idTarget="Final" x="497" y="499" zoneId="GeoPuertaAlcala" transitionTime="0" transitionType="0" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="RecordandoPalacioCristal">
@@ -1184,6 +1233,14 @@
       <detailed>
       </detailed>
     </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="PuertaAlcala2" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
   </object>
   <object id="broche" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
@@ -1339,6 +1396,20 @@
   <object id="pieza6" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/pieza 6.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="theend" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/theend.png" />
       <asset type="icon" uri="assets/special/EmptyIcon.png" />
     </resources>
     <description>
