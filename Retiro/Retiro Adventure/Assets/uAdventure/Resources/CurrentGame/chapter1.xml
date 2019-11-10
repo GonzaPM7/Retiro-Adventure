@@ -394,9 +394,12 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="pavoReal" x="1207" y="631" scale="0.4547913" layer="0" hasInfluenceArea="no" />
+    </objects>
     <characters>
-      <character-ref idTarget="CarlosIII" x="789" y="927" scale="1" orientation="2" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="Gaviota1" x="1706" y="835" scale="0.8606282" orientation="0" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="CarlosIII" x="789" y="927" scale="1" orientation="2" layer="2" hasInfluenceArea="no" />
+      <character-ref idTarget="Gaviota1" x="1706" y="835" scale="0.8606282" orientation="0" layer="1" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="PalaciodeCrista" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -409,11 +412,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="GuardiaSeguridad" x="234" y="1193" scale="2.446382" orientation="2" layer="1" hasInfluenceArea="no">
-        <condition>
-          <active flag="ConocidoCarlosIII" />
-        </condition>
-      </character-ref>
+      <character-ref idTarget="GuardiaSeguridad" x="234" y="1193" scale="2.446382" orientation="2" layer="1" hasInfluenceArea="no" />
       <character-ref idTarget="CarlosIII" x="1085" y="852" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
@@ -579,7 +578,7 @@
     <actions>
       <enter-action>
         <effect>
-          <trigger-zoned-scene idTarget="FuentedelosGalápagos" x="400" y="800" zoneId="GeoPuertaAlcala" transitionTime="0" transitionType="0" />
+          <trigger-zoned-scene idTarget="FuentedelosGalápagos" x="400" y="800" zoneId="GeoFuenteGalapagos" transitionTime="0" transitionType="0" />
           <condition />
         </effect>
         <only-from-outside>True</only-from-outside>
@@ -746,7 +745,7 @@
       </enter-action>
     </actions>
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4105353053417, -3.68353784089437)" zoom="18" start="no">
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4107558717851, -3.68336081509933)" zoom="17" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition>
         <active flag="Saber2pieza" />
