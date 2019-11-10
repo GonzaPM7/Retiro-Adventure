@@ -78,6 +78,21 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <active flag="Saber2pieza" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="FuenteGaviotas1" />
+          <condition />
+          <trigger-conversation idTarget="FuenteGaviotas2" />
+          <condition />
+          <activate flag="Pieza2" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
   </character>
   <character id="CarlosIII">
     <resources name="No name">
@@ -123,6 +138,25 @@
           <condition />
         </effect>
       </examine>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <inactive flag="IntroPalacioCristal" />
+          <active flag="Pieza2" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="PalacioCristal1" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Pieza2" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="RecordandoPalacioCristal" />
+          <condition />
+        </effect>
+      </talk-to>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
           <active flag="ConocidoCarlosIII" />
@@ -219,6 +253,14 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="PalacioCristal2" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
   <scene id="SceneFuenteAngelCaido" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -233,7 +275,7 @@
       <character-ref idTarget="CarlosIII" x="823" y="939" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
     <active-areas>
-      <active-area id="Info" rectangular="yes" x="336" y="9" width="277" height="497" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="Info" rectangular="no" x="336" y="61" width="280" height="451" hasInfluenceArea="no" behaviour="normal">
         <description>
           <name>
           </name>
@@ -252,6 +294,21 @@
             </effect>
           </examine>
         </actions>
+        <point x="428" y="61" />
+        <point x="502" y="104" />
+        <point x="513" y="210" />
+        <point x="528" y="216" />
+        <point x="518" y="244" />
+        <point x="538" y="420" />
+        <point x="616" y="512" />
+        <point x="336" y="509" />
+        <point x="411" y="404" />
+        <point x="412" y="354" />
+        <point x="424" y="343" />
+        <point x="431" y="251" />
+        <point x="421" y="215" />
+        <point x="454" y="166" />
+        <point x="414" y="108" />
       </active-area>
     </active-areas>
   </scene>
@@ -265,7 +322,11 @@
     </name>
     <default-initial-position x="400" y="450" />
     <objects>
-      <object-ref idTarget="pieza1" x="992" y="544" scale="0.141357" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="pieza1" x="992" y="544" scale="0.141357" layer="0" hasInfluenceArea="no">
+        <condition>
+          <active flag="Saber1pieza" />
+        </condition>
+      </object-ref>
     </objects>
     <characters>
       <character-ref idTarget="CarlosIII" x="219" y="711" scale="1.151744" orientation="2" layer="1" hasInfluenceArea="no" />
@@ -281,8 +342,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="CarlosIII" x="789" y="927" scale="1" orientation="2" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="Gaviota1" x="853" y="709" scale="3.224357" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="CarlosIII" x="789" y="927" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="PalaciodeCrista" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -294,6 +354,14 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="GuardiaSeguridad" x="231" y="1172" scale="2.446382" orientation="2" layer="1" hasInfluenceArea="no">
+        <condition>
+          <active flag="IntroPalacioCristal" />
+        </condition>
+      </character-ref>
+      <character-ref idTarget="CarlosIII" x="1085" y="852" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="PalaciodeVelazquez" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -335,7 +403,7 @@
     </name>
     <default-initial-position x="400" y="450" />
   </scene>
-  <scene id="Inicio" hideInventory="no" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Inicio" hideInventory="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -424,11 +492,11 @@
       </detailed>
     </description>
     <geometries>
-      <geometry influence="45">
+      <geometry influence="10">
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40.4106251349293 -3.6802435935476 40.4109764066033 -3.6803937972524</posList>
+              <posList>40.4113205283001 -3.68053058991217 40.4112429223221 -3.68067274698997 40.4110877100976 -3.68078271755957 40.4109304552419 -3.68083099732185 40.4107139739304 -3.68080149302269 40.4104300964382 -3.68063787827277 40.4103320665225 -3.68049572119497 40.4102687554594 -3.68010948309684 40.410421927284 -3.67988685974859 40.4106547477899 -3.67980102906011 40.4108620393029 -3.67983321556831 40.4110346110965 -3.67991904625679 40.4111979925044 -3.68006120333456 40.4113041902069 -3.68027309784676</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -436,6 +504,9 @@
     </geometries>
     <actions>
       <enter-action>
+        <condition>
+          <active flag="ConocidoCarlosIII" />
+        </condition>
         <effect>
           <trigger-zoned-scene idTarget="LaRosaleda" x="640" y="540" zoneId="La Rosaleda " transitionTime="0" transitionType="0" />
           <condition />
@@ -444,6 +515,16 @@
         </effect>
         <only-from-outside>True</only-from-outside>
       </enter-action>
+      <exit-action>
+        <condition>
+          <active flag="Pieza1" />
+        </condition>
+        <effect>
+          <speak-char idTarget="CarlosIII">Eh, no te vayas, aún tenemos que coger la pieza</speak-char>
+          <condition />
+        </effect>
+        <only-from-inside>True</only-from-inside>
+      </exit-action>
     </actions>
   </geoelement>
   <geoelement id="Jardines cecilio rodríguez">
@@ -464,6 +545,9 @@
     </geometries>
     <actions>
       <enter-action>
+        <condition>
+          <active flag="Saber1pieza" />
+        </condition>
         <effect>
           <trigger-zoned-scene idTarget="Jardinesceciliorodríguez" x="800" y="692" zoneId="Jardines cecilio rodríguez" transitionTime="0" transitionType="0" />
           <condition />
@@ -490,7 +574,19 @@
         </Point>
       </geometry>
     </geometries>
-    <actions />
+    <actions>
+      <enter-action>
+        <effect>
+          <trigger-zoned-scene idTarget="PalaciodeCrista" x="640" y="639" zoneId="Palacio de Cristal" transitionTime="0" transitionType="0" />
+          <condition />
+          <trigger-conversation idTarget="PalacioCristal1" />
+          <condition />
+          <activate flag="EntrarPalacioCristal" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
   </geoelement>
   <geoelement id="PalacioDeVelazquez">
     <description>
@@ -528,9 +624,11 @@
     </geometries>
     <actions />
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4110762842697, -3.68112384557742)" zoom="17" start="no">
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4143501860228, -3.67994099860518)" zoom="19" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
-      <condition />
+      <condition>
+        <active flag="Saber2pieza" />
+      </condition>
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
         <param name="Position">(40.4142074584961, -3.6782968044281)</param>
         <param name="Rotation">0</param>
@@ -552,13 +650,19 @@
       <condition />
     </map-element>
     <map-element targetId="La Rosaleda " layer="0" scale="1" orientation="2">
-      <condition />
+      <condition>
+        <active flag="ConocidoCarlosIII" />
+      </condition>
     </map-element>
     <map-element targetId="Jardines cecilio rodríguez" layer="0" scale="1" orientation="2">
-      <condition />
+      <condition>
+        <active flag="Pieza1" />
+      </condition>
     </map-element>
     <map-element targetId="Palacio de Cristal" layer="0" scale="1" orientation="2">
-      <condition />
+      <condition>
+        <active flag="Pieza2" />
+      </condition>
     </map-element>
     <map-element targetId="PalacioDeVelazquez" layer="0" scale="1" orientation="2">
       <condition />
@@ -745,7 +849,12 @@
     <dialogue-node nodeindex="3" editor-x="755" editor-y="50">
       <speak-char idTarget="CarlosIII"> No te preocupes. Creo que sé dónde está su nido. Hay una fuente cercana conocida precisamente por esos animales. Piensa. ¿Dónde crees que puede ser?</speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <activate flag="Saber2pieza" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="FuenteGaviotas1">
@@ -761,7 +870,12 @@
       <condition />
       <speak-char idTarget="CarlosIII">Menos mal que la recuperamos a tiempo. Según mis notas, la siguiente pieza está en un palacio cercano pegado a un gran lago. La pieza está en el interior, pero se puede ver perfectamente desde el exterior.</speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <activate flag="Pieza2" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="PalacioCristal1">
@@ -814,7 +928,12 @@
     <dialogue-node nodeindex="5" editor-x="1224" editor-y="50">
       <speak-char idTarget="CarlosIII">He de decir que no sé dónde está la siguiente. Pero en un palacio cercano con bóvedas de hierro podremos buscar más información.</speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <activate flag="Pieza3" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="PalacioVelazquez1">
@@ -875,6 +994,15 @@
   <graph-conversation id="PuertaAlcala2">
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-char idTarget="CarlosIII">Mi tiempo aquí ha terminado. Nunca podré agradecerte suficiente lo mucho que has hecho por mí. Recordar este parque me ha traído lágrimas a los ojos. ¡Hasta siempre, viajero!</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RecordandoPalacioCristal">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>Hay que ir al palacio de cristal</speak-player>
+      <condition />
+      <speak-player>Está junto a un lago, no tiene pérdida siguiendo los carteles</speak-player>
       <condition />
       <end-conversation />
     </dialogue-node>
