@@ -500,9 +500,9 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
-    <characters>
-      <character-ref idTarget="CarlosIII" x="638" y="1069" scale="0.8502862" orientation="2" layer="0" hasInfluenceArea="no" />
-    </characters>
+    <objects>
+      <object-ref idTarget="InfoGalapagos" x="400" y="1073" scale="1.008157" layer="0" hasInfluenceArea="no" />
+    </objects>
   </scene>
   <scene id="PuertadeAlcalá" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -544,6 +544,19 @@
     <default-initial-position x="400" y="450" />
     <objects>
       <object-ref idTarget="theend" x="503" y="661" scale="1.677344" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="Hercules" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/herculesylahidra1.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="InfoHercules" x="397" y="1081" scale="1.015079" layer="0" hasInfluenceArea="no" />
     </objects>
   </scene>
   <geoelement id="GeoPuertaAlcala">
@@ -748,7 +761,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40.4149464659561 -3.68236790308712 40.4152701461678 -3.68248189697032 40.4154478122467 -3.68160213241342 40.4151210696706 -3.68150020847086</posList>
+              <posList>40.4149423811789 -3.68237594971416 40.4152803583174 -3.68247653262322 40.4154437274695 -3.68161017904046 40.4151169848934 -3.6815082550979</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -794,7 +807,7 @@
       </enter-action>
     </actions>
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4144280117627, -3.68147941311337)" zoom="14" start="no">
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4108911890134, -3.68331938979423)" zoom="19" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition>
         <active flag="Saber2pieza" />
@@ -827,6 +840,7 @@
     <map-element targetId="Jardines cecilio rodríguez" layer="0" scale="1" orientation="2">
       <condition>
         <active flag="Pieza1" />
+        <inactive flag="Saber2pieza" />
       </condition>
     </map-element>
     <map-element targetId="Palacio de Cristal" layer="0" scale="1" orientation="2">
@@ -840,7 +854,9 @@
       </condition>
     </map-element>
     <map-element targetId="Monumento Alfonso XII" layer="0" scale="1" orientation="2">
-      <condition />
+      <condition>
+        <inactive flag="AlfonsoXIIHablado" />
+      </condition>
     </map-element>
     <map-element targetId="GeoPuertaAlcala" layer="0" scale="1" orientation="2">
       <condition />
@@ -850,9 +866,51 @@
         <active flag="SaberPieza5" />
       </condition>
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
-        <param name="Position">(40.415657043457, -3.68166851997375)</param>
+        <param name="Position">(40.4155082702637, -3.68156266212463)</param>
         <param name="Rotation">0</param>
         <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="InterrogaciónHercules" layer="0" scale="0.1500249" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4118690490723, -3.67903065681458)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">30</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="IterrogacionGalapagos" layer="0" scale="0.2354668" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4184608459473, -3.68547868728638)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="PuertaAlcalaCompletado" layer="0" scale="0.5090734" orientation="2">
+      <condition>
+        <active flag="Pieza6" />
+        <inactive flag="AcabadaConversaciónAlcala" />
+      </condition>
+      <ext-elem-ref transformManager="uAdventure.Geo.ScreenDescriptor">
+        <param name="Position">(114.7, 278.5)</param>
+        <param name="Rotation">0</param>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="pieza6" layer="0" scale="0.1074467" orientation="2">
+      <condition>
+        <active flag="AlfonsoXIIHablado" />
+      </condition>
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4175262451172, -3.68293857574463)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">20</param>
         <param name="RevealOnlyOnRange">True</param>
         <param name="RevealParticleTexture">leaf_particle.png</param>
       </ext-elem-ref>
@@ -1042,6 +1100,8 @@
         <effect>
           <activate flag="Saber2pieza" />
           <condition />
+          <trigger-scene idTarget="Retiro" x="400" y="800" transitionTime="1000" transitionType="5" />
+          <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
@@ -1165,6 +1225,8 @@
         <effect>
           <activate flag="SaberPieza5" />
           <condition />
+          <trigger-scene idTarget="Retiro" x="475" y="486" transitionTime="1000" transitionType="1" />
+          <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
@@ -1187,26 +1249,22 @@
     <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
       <speak-char idTarget="AlfonsoXIII">¡Carlos! ¿Qué te cuentas? Veo que aún no te curaste de tu maldición. Y veo que ya encontraste a alguien para seguir ayudándote. Yo, como puedes ver, no estoy disponible.</speak-char>
       <condition />
-      <speak-char idTarget="AlfonsoXIII">Hablando de eso, ayer, leyendo la Constitución de 1876 encontré esto entre sus hojas. Esto era lo que necesitabas para curarte, ¿no?</speak-char>
+      <speak-char idTarget="AlfonsoXIII">Hablando de eso, ayer, leyendo la Constitución de 1876 encontré esto entre sus hojas. Y contaba que a los alrededores de mi monumento se encontraba la pieza de un puzle.</speak-char>
       <condition />
       <child nodeindex="2" />
-      <effect>
-        <generate-object idTarget="pieza6" />
-        <condition />
-        <activate flag="Pieza6" />
-        <condition />
-      </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="2" editor-x="520" editor-y="50">
-      <speak-char idTarget="CarlosIII"> ¡Ah, sí! ¡Gracias! Pues con esta, ya tenemos todas las piezas del puzzle. Juntemoslas y veamos donde está situado el portal.</speak-char>
+    <dialogue-node nodeindex="2" editor-x="614" editor-y="50">
+      <speak-char idTarget="CarlosIII"> ¡Ah, sí! Es la última pieza que nos queda para saber el lugar del portal</speak-char>
       <condition />
-      <speak-char idTarget="CarlosIII">¡La Puerta de Alcalá! ¡Una de mis mayores creaciones! ¡Corramos a ella!</speak-char>
+      <speak-char idTarget="AlfonsoXIII">Pues tiene que estar cerca de aquí</speak-char>
+      <condition />
+      <speak-char idTarget="CarlosIII">#! !!Muchas gracias Alfonso!! Iremos a buscarla</speak-char>
       <condition />
       <end-conversation>
         <effect>
-          <navigate navigation-type="Ordered">
-            <step locks="False">GeoPuertaAlcala</step>
-          </navigate>
+          <trigger-scene idTarget="Retiro" x="475" y="486" transitionTime="1000" transitionType="5" />
+          <condition />
+          <activate flag="AlfonsoXIIHablado" />
           <condition />
         </effect>
       </end-conversation>
@@ -1218,7 +1276,12 @@
       <condition />
       <speak-char idTarget="CarlosIII">Ya estamos aquí. Coloquemos el puzle completo en ese pedestal de ahí. El portal debería abrirse.</speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <activate flag="ColocarPuzle" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="PuertaAlcala2">
@@ -1324,6 +1387,9 @@
     </description>
     <actions>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="ColocarPuzle" />
+        </condition>
         <effect>
           <trigger-conversation idTarget="PuertaAlcala2" />
           <condition />
@@ -1497,6 +1563,28 @@
       <detailed>
       </detailed>
     </description>
+    <actions>
+      <grab needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <remove-element idTarget="pieza6" />
+          <condition />
+          <generate-object idTarget="pieza6" />
+          <condition />
+          <speak-player>¡¡Bieen!! hemos conseguido la última pieza</speak-player>
+          <condition />
+          <activate flag="Pieza6" />
+          <condition />
+          <speak-player>¡¡ES LA PUERTA DE ALCALA!! Vayamos para allá</speak-player>
+          <condition />
+          <navigate navigation-type="Ordered">
+            <step locks="False">GeoPuertaAlcala</step>
+          </navigate>
+          <condition />
+          <activate flag="AcabadaConversaciónAlcala" />
+          <condition />
+        </effect>
+      </grab>
+    </actions>
   </object>
   <object id="theend" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
@@ -1512,4 +1600,118 @@
       </detailed>
     </description>
   </object>
+  <object id="InterrogaciónHercules" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/5a4613eed099a2ad03f9c996.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="Hercules" x="400" y="800" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="InfoHercules" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/herculesylahidra1.jpg" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <speak-player>Esta estatua es posiblemente una de las estatuas más antiguas del parque ya que está fechada en torno a 1650</speak-player>
+          <condition />
+          <speak-player>aunque no fue realizada para el Retiro sino para el Antiguo Alcázar.</speak-player>
+          <condition />
+          <speak-player>Se trata de la lucha de Hércules y Yolao con la Hidra de Lerna, bestia con siete cabezas que expulsaban fuego y se regeneran tras ser cortadas</speak-player>
+          <condition />
+          <trigger-scene idTarget="Retiro" x="475" y="486" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="InfoGalapagos" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/800px-Buen_Retiro_Fuente_de_los_Galapagos02.jpg" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <speak-player>Esta preciosa fuente fue inaugurada en 1832, en principio estuvo en la red de San Luis, en la Gran Vía.</speak-player>
+          <condition />
+          <speak-player>Diferentes estudios proponen que fue encargada para conmemorar distintos eventos relacionados con la que sería la reina Isabel II: princesa de Asturias, bien su nacimiento o bien su primer cumpleaños</speak-player>
+          <condition />
+          <speak-player>La fuente fue diseñada por el arquitecto Francisco Javier de Mariátegui, con esculturas de granito y piedra caliza talladas por José Tomás</speak-player>
+          <condition />
+          <trigger-scene idTarget="Retiro" x="475" y="486" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="IterrogacionGalapagos" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/5a4613eed099a2ad03f9c996.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="FuentedelosGalápagos" x="400" y="800" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <atrezzoobject id="PuertaAlcalaCompletado">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/PuzleComppletado.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </atrezzoobject>
 </eAdventure>
