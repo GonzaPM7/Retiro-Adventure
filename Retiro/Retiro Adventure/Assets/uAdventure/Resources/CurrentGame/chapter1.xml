@@ -146,23 +146,93 @@
       </examine>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <active flag="ConocidoCarlosIII" />
-          <inactive flag="EntrarRosaleda" />
+          <active flag="EntrarPuertaAlcala" />
         </condition>
         <effect>
-          <trigger-conversation idTarget="RecordandoInicioCarlos" />
+          <trigger-conversation idTarget="PuertaAlcala1" />
+          <condition />
+          <trigger-conversation idTarget="PuertaAlcala2" />
           <condition />
         </effect>
       </talk-to>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <active flag="EntrarRosaleda" />
-          <inactive flag="EntrarJardines" />
+          <active flag="Pieza6" />
         </condition>
         <effect>
-          <trigger-conversation idTarget="Rosaleda1" />
+          <trigger-conversation idTarget="RecordandoPuertaAlcalá" />
           <condition />
-          <trigger-conversation idTarget="Rosaleda2" />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarMonumento" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="MonumentoAlfonso1" />
+          <condition />
+          <trigger-conversation idTarget="MonumentoAlfonso2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Pieza5" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="RecordandoMonumentoAlfonsoXII" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarPalacioVelazquez" />
+          <inactive flag="EntrarMonumento" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="PalacioVelazquez1" />
+          <condition />
+          <trigger-conversation idTarget="PalacioVelazquez2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Pieza3" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="RecordandoPalacioVelazquez" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrarPalacioCristal" />
+          <inactive flag="EntrarPalacioVelazquez" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="PalacioCristal1" />
+          <condition />
+          <trigger-conversation idTarget="PalacioCristal2" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Pieza2" />
+          <inactive flag="EntrarPalacioCristal" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="RecordandoPalacioCristal" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Saber2pieza" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="RecordandoGaviotas" />
           <condition />
         </effect>
       </talk-to>
@@ -181,57 +251,32 @@
       </talk-to>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <active flag="Pieza2" />
-          <inactive flag="EntrarPalacioCristal" />
+          <active flag="Saber1pieza" />
         </condition>
         <effect>
-          <trigger-conversation idTarget="RecordandoPalacioCristal" />
+          <trigger-conversation idTarget="RecordandoJardines" />
           <condition />
         </effect>
       </talk-to>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <active flag="EntrarPalacioCristal" />
-          <inactive flag="EntrarPalacioVelazquez" />
+          <active flag="EntrarRosaleda" />
+          <inactive flag="EntrarJardines" />
         </condition>
         <effect>
-          <trigger-conversation idTarget="PalacioCristal1" />
+          <trigger-conversation idTarget="Rosaleda1" />
           <condition />
-          <trigger-conversation idTarget="PalacioCristal2" />
+          <trigger-conversation idTarget="Rosaleda2" />
           <condition />
         </effect>
       </talk-to>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <active flag="EntrarPalacioVelazquez" />
-          <inactive flag="EntrarMonumento" />
+          <active flag="ConocidoCarlosIII" />
+          <inactive flag="EntrarRosaleda" />
         </condition>
         <effect>
-          <trigger-conversation idTarget="PalacioVelazquez1" />
-          <condition />
-          <trigger-conversation idTarget="PalacioVelazquez2" />
-          <condition />
-        </effect>
-      </talk-to>
-      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
-        <condition>
-          <active flag="EntrarMonumento" />
-        </condition>
-        <effect>
-          <trigger-conversation idTarget="MonumentoAlfonso1" />
-          <condition />
-          <trigger-conversation idTarget="MonumentoAlfonso2" />
-          <condition />
-        </effect>
-      </talk-to>
-      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
-        <condition>
-          <active flag="EntrarPuertaAlcala" />
-        </condition>
-        <effect>
-          <trigger-conversation idTarget="PuertaAlcala1" />
-          <condition />
-          <trigger-conversation idTarget="PuertaAlcala2" />
+          <trigger-conversation idTarget="RecordandoInicioCarlos" />
           <condition />
         </effect>
       </talk-to>
@@ -488,7 +533,7 @@
       <object-ref idTarget="play" x="502" y="508" scale="0.4383554" layer="0" hasInfluenceArea="no" />
     </objects>
   </scene>
-  <scene id="Final" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Final" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -699,10 +744,14 @@
       </detailed>
     </description>
     <geometries>
-      <geometry influence="50">
-        <Point>
-          <pos>40.4151547650722 -3.68198702940703</pos>
-        </Point>
+      <geometry influence="15">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40.4149464659561 -3.68236790308712 40.4152701461678 -3.68248189697032 40.4154478122467 -3.68160213241342 40.4151210696706 -3.68150020847086</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
       </geometry>
     </geometries>
     <actions>
@@ -745,7 +794,7 @@
       </enter-action>
     </actions>
   </geoelement>
-  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4107558717851, -3.68336081509933)" zoom="17" start="no">
+  <map-scene id="Retiro" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="no" gameplayArea="0 0 0 0" center="(40.4144280117627, -3.68147941311337)" zoom="14" start="no">
     <map-element targetId="Gaviota1" layer="0" scale="0.2126091" orientation="0">
       <condition>
         <active flag="Saber2pieza" />
@@ -793,9 +842,6 @@
     <map-element targetId="Monumento Alfonso XII" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
-    <map-element targetId="GeoFuenteGalapagos" layer="0" scale="1" orientation="2">
-      <condition />
-    </map-element>
     <map-element targetId="GeoPuertaAlcala" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -804,7 +850,7 @@
         <active flag="SaberPieza5" />
       </condition>
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
-        <param name="Position">(40.4154014587402, -3.68160271644592)</param>
+        <param name="Position">(40.415657043457, -3.68166851997375)</param>
         <param name="Rotation">0</param>
         <param name="InteractionRange">25</param>
         <param name="RevealOnlyOnRange">True</param>
@@ -931,7 +977,7 @@
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Rosaleda1">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+    <dialogue-node nodeindex="0" editor-x="48" editor-y="48">
       <speak-char idTarget="CarlosIII">Ahhh, la Rosaleda. Que recuerdos. Hicimos bien en inspirarnos en el Bois de Boulogne de París. Y qué pena que el invernadero que nos cedió el Marqués de Salamanca ya no esté por aquí. </speak-char>
       <condition />
       <end-conversation />
@@ -942,16 +988,15 @@
       <speak-player>¿Qué es ese papel que veo entre los rosales? Oh, es una pieza del puzle.</speak-player>
       <condition />
       <child nodeindex="1" />
+      <effect>
+        <activate flag="Saber1pieza" />
+        <condition />
+      </effect>
     </dialogue-node>
     <dialogue-node nodeindex="1" editor-x="285" editor-y="50">
       <speak-char idTarget="CarlosIII">Según lo que sé, las siguientes 2 piezas se encontraban en unos jardines cercanos, conocidos por ser rebosantes de tranquilidad, en los que se pueden encontrar pavos reales y esculturas de todo tipo.</speak-char>
       <condition />
-      <end-conversation>
-        <effect>
-          <activate flag="Saber1pieza" />
-          <condition />
-        </effect>
-      </end-conversation>
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="JardinesCecilio1">
@@ -1148,6 +1193,8 @@
       <effect>
         <generate-object idTarget="pieza6" />
         <condition />
+        <activate flag="Pieza6" />
+        <condition />
       </effect>
     </dialogue-node>
     <dialogue-node nodeindex="2" editor-x="520" editor-y="50">
@@ -1191,6 +1238,49 @@
       <speak-player>Hay que ir al palacio de cristal</speak-player>
       <condition />
       <speak-player>Está junto a un lago, no tiene pérdida siguiendo los carteles</speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RecordandoJardines">
+    <dialogue-node nodeindex="0" editor-x="51" editor-y="50">
+      <speak-player>Piensa, piensa, unos jardines rebosantes de tranquilidad...</speak-player>
+      <condition />
+      <speak-player>Con pavos reales y esculturas de todo tipo...</speak-player>
+      <condition />
+      <speak-char idTarget="CarlosIII">¡Los jardines de Cecilio Rodríguez!</speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RecordandoGaviotas">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>El nido debe estar en la fuente de las gaviotas...</speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RecordandoPalacioVelazquez">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>El palacio más cercano que conozco es el Palacio de Velázquez</speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RecordandoMonumentoAlfonsoXII">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>Ahora hay que ir a buscar un conocido del pesado este</speak-player>
+      <condition />
+      <speak-player>Dice que se puede ir en barca...</speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RecordandoPuertaAlcalá">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>Miralá miralá miralá miralá</speak-player>
+      <condition />
+      <speak-player>La Puerta de Alcalá</speak-player>
       <condition />
       <end-conversation />
     </dialogue-node>
@@ -1387,6 +1477,8 @@
           <navigate navigation-type="Ordered">
             <step locks="False">Monumento Alfonso XII</step>
           </navigate>
+          <condition />
+          <activate flag="Pieza5" />
           <condition />
         </effect>
       </grab>
