@@ -100,6 +100,45 @@
       </examine>
     </actions>
   </character>
+  <character id="AlfonsoXIII">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/alfonsoxiii.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/alfonsoxiiiahorasi.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="MonumentoAlfonso2" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
   <character id="CarlosIII">
     <resources name="No name">
       <asset type="standup" uri="assets/special/EmptyAnimation" />
@@ -282,45 +321,6 @@
       </talk-to>
     </actions>
   </character>
-  <character id="AlfonsoXIII">
-    <resources name="No name">
-      <asset type="standup" uri="assets/special/EmptyAnimation" />
-      <asset type="standdown" uri="assets/animation/alfonsoxiii.eaa.xml" />
-      <asset type="standright" uri="assets/special/EmptyAnimation" />
-      <asset type="standleft" uri="assets/special/EmptyAnimation" />
-      <asset type="speakup" uri="assets/special/EmptyAnimation" />
-      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
-      <asset type="speakright" uri="assets/special/EmptyAnimation" />
-      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
-      <asset type="useright" uri="assets/special/EmptyAnimation" />
-      <asset type="useleft" uri="assets/special/EmptyAnimation" />
-      <asset type="walkup" uri="assets/special/EmptyAnimation" />
-      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
-      <asset type="walkright" uri="assets/special/EmptyAnimation" />
-      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
-    </resources>
-    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
-      <frontcolor color="#FFFFFF" />
-      <bordercolor color="#000000" />
-    </textcolor>
-    <description>
-      <name>
-      </name>
-      <brief>
-      </brief>
-      <detailed>
-      </detailed>
-    </description>
-    <voice name="" synthesizeAlways="no" />
-    <actions>
-      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
-        <effect>
-          <trigger-conversation idTarget="MonumentoAlfonso2" />
-          <condition />
-        </effect>
-      </talk-to>
-    </actions>
-  </character>
   <character id="GuardiaSeguridad">
     <resources name="No name">
       <asset type="standup" uri="assets/special/EmptyAnimation" />
@@ -488,7 +488,7 @@
     <default-initial-position x="400" y="450" />
     <characters>
       <character-ref idTarget="CarlosIII" x="919" y="601" scale="0.6327335" orientation="2" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="AlfonsoXIII" x="269" y="615" scale="1" orientation="2" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="AlfonsoXIII" x="199" y="604" scale="0.250873" orientation="2" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="FuentedelosGalápagos" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
