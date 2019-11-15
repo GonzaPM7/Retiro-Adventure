@@ -530,7 +530,8 @@
     </name>
     <default-initial-position x="400" y="450" />
     <objects>
-      <object-ref idTarget="play" x="502" y="508" scale="0.4383554" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="play" x="502" y="508" scale="0.4383554" layer="1" hasInfluenceArea="no" />
+      <object-ref idTarget="CreditsIcon" x="503" y="651" scale="0.5430214" layer="0" hasInfluenceArea="no" />
     </objects>
   </scene>
   <scene id="Final" hideInventory="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -557,6 +558,35 @@
     <default-initial-position x="400" y="450" />
     <objects>
       <object-ref idTarget="InfoHercules" x="397" y="1081" scale="1.015079" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="Creditos" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/images.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="Recursos" x="137" y="89" scale="0.2392575" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <atrezzo>
+      <atrezzo-ref idTarget="Credits" x="141" y="275" scale="0.1322147" layer="1" />
+    </atrezzo>
+  </scene>
+  <scene id="Creditos2" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/images.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="RecursosEnteros" x="145" y="246" scale="0.1457068" layer="0" hasInfluenceArea="no" />
     </objects>
   </scene>
   <geoelement id="GeoPuertaAlcala">
@@ -1366,6 +1396,8 @@
         <effect>
           <remove-element idTarget="play" />
           <condition />
+          <remove-element idTarget="CreditsIcon" />
+          <condition />
           <trigger-conversation idTarget="ConversaciónInicial" />
           <condition />
         </effect>
@@ -1700,9 +1732,89 @@
       </examine>
     </actions>
   </object>
+  <object id="Recursos" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Recursos.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="Creditos2" x="142" y="132" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="RecursosEnteros" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/RecursosEnteros2.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="Inicio" x="497" y="499" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="CreditsIcon" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Cred.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="Creditos" x="142" y="132" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
   <atrezzoobject id="PuertaAlcalaCompletado">
     <resources name="No name">
       <asset type="image" uri="assets/image/PuzleComppletado.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </atrezzoobject>
+  <atrezzoobject id="Credits">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Sin título-2.png" />
       <asset type="icon" uri="assets/special/EmptyIcon.png" />
     </resources>
     <description>
